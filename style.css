@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: black;
+    color: white;
+}
+
+/* NAV */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    background: black;
+    z-index: 100;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.whatsapp {
+    color: gold;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('images/hero.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero-text {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+
+.hero h1, .hero h2 {
+    font-size: 60px;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: gold;
+    border: none;
+}
+
+/* SERVICES */
+.services {
+    padding: 100px 50px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+
+.card {
+    background: #111;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* REVIEWS */
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    padding: 50px;
+}
+
+.review-card {
+    position: relative;
+}
+
+.review-card img {
+    width: 100%;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.review-card:hover .overlay-text {
+    opacity: 1;
+}
+
+/* FORM */
+.contact {
+    padding: 100px 50px;
+}
+
+form {
+    display: grid;
+    gap: 15px;
+}
+
+input, select, textarea {
+    padding: 15px;
+    background: #111;
+    border: 1px solid #333;
+    color: white;
+}
+
+button {
+    background: gold;
+    padding: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #111;
+}
