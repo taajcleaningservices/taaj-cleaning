@@ -18,6 +18,32 @@
 body{
     background:#000;
     color:white;
+    padding-top:70px;
+}
+
+/* NAVBAR */
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.8);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.navbar h2{
+    color:#FFD700;
+}
+
+.navbar a{
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+    font-size:14px;
 }
 
 /* HERO */
@@ -52,12 +78,13 @@ body{
     font-weight:600;
 }
 
-/* SERVICES */
+/* SECTIONS */
 .section{
     padding:60px 20px;
     text-align:center;
 }
 
+/* SERVICES */
 .services{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -77,17 +104,47 @@ body{
     box-shadow:0 0 20px #FFD700;
 }
 
-/* BEFORE AFTER */
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
-    margin-top:30px;
+/* ANIMATION */
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
 }
 
-.gallery img{
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* BEFORE AFTER SLIDER */
+.compare{
+    position:relative;
+    max-width:600px;
+    margin:40px auto;
+}
+
+.compare img{
     width:100%;
+    display:block;
     border-radius:10px;
+}
+
+.after{
+    position:absolute;
+    top:0;
+    left:0;
+    width:50%;
+    overflow:hidden;
+}
+
+.slider{
+    position:absolute;
+    top:0;
+    left:50%;
+    width:3px;
+    height:100%;
+    background:#FFD700;
+    cursor:ew-resize;
 }
 
 /* REVIEWS */
@@ -111,6 +168,17 @@ body{
 
 <body>
 
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>TAAJ</h2>
+    <div>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
 <!-- HERO -->
 <section class="hero">
     <div>
@@ -124,7 +192,7 @@ body{
 </section>
 
 <!-- SERVICES -->
-<section class="section">
+<section class="section fade" id="services">
     <h2 style="color:#FFD700;">Our Services</h2>
 
     <div class="services">
@@ -140,17 +208,22 @@ body{
 </section>
 
 <!-- BEFORE AFTER -->
-<section class="section">
+<section class="section fade" id="work">
     <h2 style="color:#FFD700;">Our Work</h2>
 
-    <div class="gallery">
+    <div class="compare">
         <img src="InShot_20260123_145116360.jpg">
-        <img src="InShot_20260123_145116360.jpg">
+
+        <div class="after" id="afterBox">
+            <img src="InShot_20260123_145116360.jpg">
+        </div>
+
+        <div class="slider" id="slider"></div>
     </div>
 </section>
 
 <!-- REVIEWS -->
-<section class="section">
+<section class="section fade">
     <h2 style="color:#FFD700;">Customer Reviews</h2>
 
     <div class="review">
@@ -170,7 +243,7 @@ body{
 </section>
 
 <!-- CTA -->
-<section class="section">
+<section class="section fade" id="contact">
     <h2>Book Your Cleaning Today</h2>
     <a href="tel:0468852570" class="btn">Call Now</a>
 </section>
@@ -179,6 +252,42 @@ body{
 <div class="footer">
     © 2026 TAAJ Cleaning Services | Canberra
 </div>
+
+<script>
+// SCROLL ANIMATION
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    faders.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            el.classList.add('show');
+        }
+    });
+});
+
+// BEFORE AFTER SLIDER
+const slider = document.getElementById('slider');
+const after = document.getElementById('afterBox');
+
+let isDown = false;
+
+slider.addEventListener('mousedown', () => isDown = true);
+window.addEventListener('mouseup', () => isDown = false);
+
+window.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+
+    const rect = slider.parentElement.getBoundingClientRect();
+    let x = e.clientX - rect.left;
+
+    if(x < 0) x = 0;
+    if(x > rect.width) x = rect.width;
+
+    after.style.width = x + "px";
+    slider.style.left = x + "px";
+});
+</script>
 
 </body>
 </html>
