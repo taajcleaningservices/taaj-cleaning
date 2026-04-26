@@ -8,241 +8,233 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-html{scroll-behavior:smooth;}
-body{background:#0a0a0a;color:white;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+}
 
 /* NAV */
 nav{
-position:fixed;
-top:0;width:100%;
 display:flex;
 justify-content:space-between;
-padding:20px 60px;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(12px);
+align-items:center;
+padding:15px 20px;
+background:black;
+position:sticky;
+top:0;
 z-index:1000;
 }
-nav h2{color:#FFD700;}
-nav a{color:white;margin-left:25px;text-decoration:none;}
-.cta-nav{
-background:#FFD700;color:black;padding:10px 18px;border-radius:6px;
+
+nav h2{
+color:#FFD700;
+}
+
+nav a{
+color:white;
+margin-left:15px;
+text-decoration:none;
+font-size:14px;
 }
 
 /* HERO */
 .hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
 text-align:center;
-background:
-linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),
+padding:80px 20px;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
 url('https://images.unsplash.com/photo-1581578731548-c64695cc6952');
 background-size:cover;
 }
+
 .hero h1{
-font-size:64px;
-font-weight:700;
+font-size:36px;
 }
-.hero span{color:#FFD700;}
-.hero p{margin-top:15px;font-size:20px;}
-.hero-buttons{margin-top:30px;}
+
+.hero span{
+color:#FFD700;
+}
+
+.hero p{
+margin-top:10px;
+opacity:0.8;
+}
 
 .btn{
-padding:16px 34px;
+display:inline-block;
+margin-top:20px;
+padding:14px 24px;
 background:#FFD700;
 color:black;
 text-decoration:none;
 border-radius:8px;
 font-weight:600;
-margin:10px;
 }
 
 /* SECTION */
-.section{padding:120px 60px;text-align:center;}
-
-/* BEFORE AFTER */
-.compare{
-max-width:900px;margin:auto;position:relative;
-}
-.compare img{
-width:100%;border-radius:12px;
-}
-.slider{
-position:absolute;
-top:0;left:0;height:100%;width:50%;
-overflow:hidden;
-}
-.slider img{width:100%;}
-.handle{
-position:absolute;left:50%;top:0;bottom:0;width:4px;background:#FFD700;
+.section{
+padding:60px 20px;
+text-align:center;
 }
 
-/* STATS */
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-margin-top:60px;
+.section:nth-child(even){
+background:#111;
 }
-.stat{
-background:#111;padding:40px;border-radius:12px;
-}
-.stat h2{color:#FFD700;font-size:40px;}
 
 /* SERVICES */
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;margin-top:40px;
+gap:15px;
 }
-.service{
-height:260px;
-background-size:cover;
-border-radius:15px;
-display:flex;align-items:flex-end;
+
+.card{
+background:#151515;
 padding:25px;
-position:relative;
-overflow:hidden;
+border-radius:10px;
 }
-.service::after{
-content:'';position:absolute;inset:0;
-background:linear-gradient(transparent,rgba(0,0,0,0.9));
-}
-.service h3{position:relative;}
 
 /* REVIEWS */
-.reviews{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;margin-top:40px;
-}
 .review{
-background:#111;padding:25px;border-radius:12px;text-align:left;
+background:#151515;
+padding:20px;
+border-radius:10px;
+margin-bottom:15px;
+text-align:left;
 }
 
-/* FORM MULTI STEP */
+/* FORM */
 .form-box{
-max-width:600px;margin:auto;background:#111;padding:40px;border-radius:12px;
-}
-.step{display:none;}
-.step.active{display:block;}
-
-input,select{
-width:100%;padding:14px;margin:10px 0;border-radius:6px;border:none;
+background:#151515;
+padding:25px;
+border-radius:10px;
+max-width:500px;
+margin:auto;
 }
 
-button{
-padding:14px 25px;background:#FFD700;border:none;margin-top:10px;
+input, textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:6px;
+border:none;
 }
 
-/* FLOAT CTA */
+/* FLOAT BUTTONS */
 .float{
 position:fixed;
-bottom:20px;right:20px;
-}
-.float a{
-display:block;margin:10px;padding:14px 20px;
-background:#FFD700;color:black;border-radius:6px;text-decoration:none;
+bottom:20px;
+right:15px;
+display:flex;
+flex-direction:column;
+gap:10px;
+z-index:1000;
 }
 
-/* FOOTER */
-.footer{padding:50px;text-align:center;background:#111;margin-top:80px;}
+.float a{
+background:#FFD700;
+color:black;
+padding:12px;
+border-radius:8px;
+text-decoration:none;
+text-align:center;
+}
+
+/* RESPONSIVE */
+@media(min-width:768px){
+.hero h1{
+font-size:50px;
+}
+
+.services{
+grid-template-columns:repeat(3,1fr);
+}
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
 <h2>TAAJ</h2>
 <div>
 <a href="#services">Services</a>
-<a href="#work">Work</a>
 <a href="#reviews">Reviews</a>
-<a href="#quote" class="cta-nav">Get Quote</a>
+<a href="#contact">Contact</a>
 </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-<div>
-<h1>Premium Cleaning <br><span>Canberra</span></h1>
-<p>End of Lease • Deep Cleaning • Regular</p>
-
-<div class="hero-buttons">
-<a href="#quote" class="btn">Get Instant Quote</a>
-</div>
-</div>
-</section>
-
-<!-- BEFORE AFTER -->
-<section class="section">
-<h2>Before & After</h2>
-
-<div class="compare">
-<img src="https://images.unsplash.com/photo-1581579185169-0d53e69b0f8c">
-<div class="slider" id="slider">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
-</div>
-<div class="handle"></div>
-</div>
-</section>
-
-<!-- STATS -->
-<section class="section">
-<h2>Trusted Results</h2>
-<div class="stats">
-<div class="stat"><h2>120+</h2><p>Jobs Done</p></div>
-<div class="stat"><h2>5★</h2><p>Reviews</p></div>
-<div class="stat"><h2>24h</h2><p>Response</p></div>
-</div>
+<h1>Premium Cleaning <span>Canberra</span></h1>
+<p>End of Lease • Deep Cleaning • Regular Cleaning</p>
+<a href="#contact" class="btn">Get Instant Quote</a>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="section">
-<h2>Services</h2>
+<h2>Our Services</h2>
+
 <div class="services">
-<div class="service" style="background:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952')"><h3>End of Lease</h3></div>
-<div class="service" style="background:url('https://images.unsplash.com/photo-1585421514738-01798e348b17')"><h3>Deep Cleaning</h3></div>
-<div class="service" style="background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')"><h3>Regular</h3></div>
+<div class="card">
+<h3>End of Lease Cleaning</h3>
+<p>Full bond cleaning as per real estate standards.</p>
 </div>
+
+<div class="card">
+<h3>Deep Cleaning</h3>
+<p>Perfect for heavily used homes needing reset.</p>
+</div>
+
+<div class="card">
+<h3>Regular Cleaning</h3>
+<p>Weekly or fortnightly maintenance cleaning.</p>
+</div>
+</div>
+
 </section>
 
 <!-- REVIEWS -->
 <section id="reviews" class="section">
 <h2>Customer Reviews</h2>
-<div class="reviews">
-<div class="review">★★★★★ Amazing service, got full bond back.</div>
-<div class="review">★★★★★ Very professional and quick.</div>
+
+<div class="review">
+★★★★★ <br>
+<strong>Rahul Sharma</strong><br>
+End of lease cleaning was perfect. Got full bond back without any issues.
 </div>
+
+<div class="review">
+★★★★★ <br>
+<strong>Simran Kaur</strong><br>
+Very professional, came on time and cleaned everything in detail.
+</div>
+
 </section>
 
-<!-- MULTI STEP FORM -->
-<section id="quote" class="section">
+<!-- CONTACT -->
+<section id="contact" class="section">
 <h2>Get a Quote</h2>
 
 <div class="form-box">
-<div class="step active">
-<input placeholder="Your Name">
-<input placeholder="Phone">
-<button onclick="next()">Next</button>
+<form action="https://formsubmit.co/YOUR-EMAIL" method="POST">
+
+<input type="hidden" name="_next" value="https://taajcleaningservices.github.io/">
+
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+<textarea name="message" placeholder="Property details"></textarea>
+
+<button class="btn" type="submit">Submit</button>
+
+</form>
 </div>
 
-<div class="step">
-<select>
-<option>Type of Cleaning</option>
-<option>End of Lease</option>
-<option>Deep Clean</option>
-</select>
-<button onclick="next()">Next</button>
-</div>
-
-<div class="step">
-<input placeholder="Address">
-<button onclick="alert('Request Sent!')">Submit</button>
-</div>
-</div>
 </section>
 
 <!-- FLOAT -->
@@ -250,20 +242,6 @@ background:#FFD700;color:black;border-radius:6px;text-decoration:none;
 <a href="tel:0468852570">Call</a>
 <a href="https://wa.me/61468852570">WhatsApp</a>
 </div>
-
-<div class="footer">
-© 2026 TAAJ Cleaning Services
-</div>
-
-<script>
-let current=0;
-function next(){
-let steps=document.querySelectorAll('.step');
-steps[current].classList.remove('active');
-current++;
-steps[current].classList.add('active');
-}
-</script>
 
 </body>
 </html>
