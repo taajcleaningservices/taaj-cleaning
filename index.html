@@ -8,68 +8,47 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-body{
-    background:#000;
-    color:white;
-    padding-top:70px;
-}
+body{background:#000;color:white;}
 
 /* NAVBAR */
-.navbar{
+nav{
     position:fixed;
     top:0;
     width:100%;
-    padding:15px 30px;
+    background:#000;
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    background:rgba(0,0,0,0.8);
-    backdrop-filter:blur(10px);
+    padding:15px 30px;
     z-index:1000;
 }
 
-.navbar h2{
-    color:#FFD700;
-}
+nav h2{color:#FFD700;}
 
-.navbar a{
+nav a{
     color:white;
-    margin-left:20px;
     text-decoration:none;
-    font-size:14px;
+    margin-left:20px;
 }
 
 /* HERO */
 .hero{
     height:100vh;
     background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-    url('InShot_20260123_145116360.jpg') center/cover no-repeat;
+    url('images/InShot_20260123_145116360.jpg') center/cover no-repeat;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
 }
 
-.hero h1{
-    font-size:60px;
-    color:#FFD700;
-}
-
-.hero p{
-    margin-top:15px;
-    font-size:20px;
-}
+.hero h1{font-size:55px;color:#FFD700;}
+.hero p{margin-top:15px;font-size:18px;}
 
 .btn{
     display:inline-block;
-    margin:15px;
+    margin:10px;
     padding:12px 25px;
     background:#FFD700;
     color:black;
@@ -79,12 +58,8 @@ body{
 }
 
 /* SECTIONS */
-.section{
-    padding:60px 20px;
-    text-align:center;
-}
+.section{padding:80px 20px;text-align:center;}
 
-/* SERVICES */
 .services{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -104,28 +79,15 @@ body{
     box-shadow:0 0 20px #FFD700;
 }
 
-/* ANIMATION */
-.fade{
-    opacity:0;
-    transform:translateY(30px);
-    transition:1s;
-}
-
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
 /* BEFORE AFTER SLIDER */
-.compare{
+.slider{
     position:relative;
     max-width:600px;
     margin:40px auto;
 }
 
-.compare img{
+.slider img{
     width:100%;
-    display:block;
     border-radius:10px;
 }
 
@@ -137,14 +99,15 @@ body{
     overflow:hidden;
 }
 
-.slider{
-    position:absolute;
-    top:0;
-    left:50%;
-    width:3px;
-    height:100%;
-    background:#FFD700;
-    cursor:ew-resize;
+.slider input{
+    width:100%;
+}
+
+/* TRUST */
+.trust{
+    margin-top:30px;
+    font-size:18px;
+    color:#FFD700;
 }
 
 /* REVIEWS */
@@ -156,12 +119,28 @@ body{
     border-radius:10px;
 }
 
+/* FLOATING BUTTON */
+.floating{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+}
+
+.floating a{
+    display:block;
+    margin:10px 0;
+    padding:12px 20px;
+    background:#FFD700;
+    color:black;
+    text-decoration:none;
+    border-radius:5px;
+}
+
 /* FOOTER */
 .footer{
     padding:30px;
     text-align:center;
     background:#111;
-    margin-top:50px;
 }
 </style>
 </head>
@@ -169,81 +148,82 @@ body{
 <body>
 
 <!-- NAVBAR -->
-<div class="navbar">
+<nav>
     <h2>TAAJ</h2>
     <div>
-        <a href="#">Home</a>
         <a href="#services">Services</a>
         <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
+        <a href="#reviews">Reviews</a>
     </div>
-</div>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
     <div>
         <h1>TAAJ Cleaning Services</h1>
-        <p>Premium Cleaning Services in Canberra</p>
-        <p>End of Lease • Deep Cleaning • Regular Cleaning</p>
+        <p>Premium Cleaning in Canberra</p>
+        <p>End of Lease • Deep Cleaning • Regular</p>
 
         <a href="tel:0468852570" class="btn">Call Now</a>
         <a href="https://wa.me/61468852570" class="btn">WhatsApp</a>
+
+        <div class="trust">
+            ✔ Bond Back Guarantee  
+            ✔ Professional Equipment  
+            ✔ Reliable & On-Time
+        </div>
     </div>
 </section>
 
 <!-- SERVICES -->
-<section class="section fade" id="services">
+<section id="services" class="section">
     <h2 style="color:#FFD700;">Our Services</h2>
 
     <div class="services">
         <div class="card">End of Lease Cleaning</div>
         <div class="card">Deep Cleaning</div>
         <div class="card">Regular Cleaning</div>
+        <div class="card">Oven Cleaning</div>
+        <div class="card">Limescale Removal</div>
+        <div class="card">Balcony Cleaning</div>
         <div class="card">Pressure Washing</div>
         <div class="card">Window Cleaning</div>
     </div>
 </section>
 
 <!-- BEFORE AFTER -->
-<section class="section fade" id="work">
-    <h2 style="color:#FFD700;">Our Work</h2>
+<section id="work" class="section">
+    <h2 style="color:#FFD700;">Before & After</h2>
 
-    <div class="compare">
-        <img src="InShot_20260123_145116360.jpg">
-
-        <div class="after" id="afterBox">
-            <img src="InShot_20260123_145116360.jpg">
+    <div class="slider">
+        <img src="images/before.jpg">
+        <div class="after" id="after">
+            <img src="images/after.jpg">
         </div>
-
-        <div class="slider" id="slider"></div>
+        <input type="range" min="0" max="100" value="50" id="range">
     </div>
 </section>
 
 <!-- REVIEWS -->
-<section class="section fade">
+<section id="reviews" class="section">
     <h2 style="color:#FFD700;">Customer Reviews</h2>
 
-    <div class="review">
-        ⭐⭐⭐⭐⭐ <br>
-        “Amazing job! Bathroom looked brand new. Highly recommend.”
-    </div>
-
-    <div class="review">
-        ⭐⭐⭐⭐⭐ <br>
-        “Very professional and on time. Best cleaning service in Canberra.”
-    </div>
-
-    <div class="review">
-        ⭐⭐⭐⭐⭐ <br>
-        “Got full bond back thanks to their end of lease cleaning.”
-    </div>
+    <div class="review">⭐⭐⭐⭐⭐ “Got full bond back. Perfect job.”</div>
+    <div class="review">⭐⭐⭐⭐⭐ “Very professional and quick.”</div>
+    <div class="review">⭐⭐⭐⭐⭐ “Bathroom looked brand new.”</div>
 </section>
 
 <!-- CTA -->
-<section class="section fade" id="contact">
+<section class="section">
     <h2>Book Your Cleaning Today</h2>
     <a href="tel:0468852570" class="btn">Call Now</a>
 </section>
+
+<!-- FLOATING -->
+<div class="floating">
+    <a href="tel:0468852570">Call</a>
+    <a href="https://wa.me/61468852570">WhatsApp</a>
+</div>
 
 <!-- FOOTER -->
 <div class="footer">
@@ -251,38 +231,11 @@ body{
 </div>
 
 <script>
-// SCROLL ANIMATION
-const faders = document.querySelectorAll('.fade');
+const range = document.getElementById("range");
+const after = document.getElementById("after");
 
-window.addEventListener('scroll', () => {
-    faders.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            el.classList.add('show');
-        }
-    });
-});
-
-// BEFORE AFTER SLIDER
-const slider = document.getElementById('slider');
-const after = document.getElementById('afterBox');
-
-let isDown = false;
-
-slider.addEventListener('mousedown', () => isDown = true);
-window.addEventListener('mouseup', () => isDown = false);
-
-window.addEventListener('mousemove', (e) => {
-    if(!isDown) return;
-
-    const rect = slider.parentElement.getBoundingClientRect();
-    let x = e.clientX - rect.left;
-
-    if(x < 0) x = 0;
-    if(x > rect.width) x = rect.width;
-
-    after.style.width = x + "px";
-    slider.style.left = x + "px";
+range.addEventListener("input", () => {
+    after.style.width = range.value + "%";
 });
 </script>
 
