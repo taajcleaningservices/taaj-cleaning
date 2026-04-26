@@ -9,131 +9,144 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#000;
-color:#fff;
-overflow-x:hidden;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#000;color:#fff;}
 
 /* NAVBAR */
 nav{
 position:fixed;
 top:0;
 width:100%;
-background:#000;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 40px;
+padding:15px 50px;
+background:#000;
 z-index:1000;
 }
 
-nav h1{
-color:#d4af37;
-font-weight:800;
+nav img{
+height:50px;
 }
 
 nav a{
 color:#fff;
 margin:0 15px;
 text-decoration:none;
+font-weight:500;
 }
 
-nav a:hover{
-color:#d4af37;
-}
+nav a:hover{color:#d4af37;}
 
 /* HERO */
 .hero{
 height:100vh;
-background:url('images/your-image.jpg') center/cover no-repeat;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('images/hero.jpg') center/cover no-repeat;
 display:flex;
 align-items:center;
-padding:100px 50px;
+padding:100px 60px;
 }
 
-.hero h2{
-font-size:60px;
-font-weight:800;
-max-width:600px;
-opacity:0;
-transform:translateY(50px);
+.hero h1{
+font-size:70px;
+max-width:700px;
 animation:fadeUp 1s ease forwards;
 }
 
-.hero span{
-color:#d4af37;
-}
+.hero span{color:#d4af37;}
 
-/* BUTTON */
 .btn{
 background:#d4af37;
 color:#000;
-padding:12px 25px;
+padding:15px 30px;
 display:inline-block;
 margin-top:20px;
 text-decoration:none;
 font-weight:600;
 }
 
-/* SERVICES */
+/* SECTION */
 .section{
-padding:80px 50px;
+padding:100px 60px;
+max-width:1400px;
+margin:auto;
 }
 
-.grid{
+/* SERVICES */
+.services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
 }
 
-.card{
-background:#111;
-padding:25px;
-transition:0.3s;
+.service-card{
+position:relative;
+height:250px;
+overflow:hidden;
+border-radius:10px;
 }
 
-.card:hover{
-transform:translateY(-10px);
+.service-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.5s;
 }
 
-.card h3{
-color:#d4af37;
-margin-bottom:10px;
+.service-card:hover img{
+transform:scale(1.1);
 }
 
-/* REVIEWS */
-.review{
-background:#111;
+.service-overlay{
+position:absolute;
+bottom:0;
+width:100%;
+background:linear-gradient(transparent,#000);
 padding:20px;
 }
 
-.review strong{
+.service-overlay h3{
 color:#d4af37;
 }
 
+/* REVIEWS */
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.review{
+background:#111;
+padding:20px;
+border-radius:10px;
+}
+
 /* FORM */
+form{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
 form input, form select, form textarea{
-width:100%;
-padding:12px;
-margin:10px 0;
+padding:15px;
 background:#111;
 border:1px solid #333;
 color:#fff;
 }
 
+form textarea{
+grid-column:span 2;
+height:120px;
+}
+
 form button{
-width:100%;
+grid-column:span 2;
 background:#d4af37;
-border:none;
 padding:15px;
+border:none;
 font-weight:600;
 cursor:pointer;
 }
@@ -147,15 +160,12 @@ transform:translate(-50%,-50%) scale(0);
 background:#111;
 padding:40px;
 text-align:center;
-z-index:2000;
 transition:0.3s;
 }
 
-.popup.active{
-transform:translate(-50%,-50%) scale(1);
-}
+.popup.active{transform:translate(-50%,-50%) scale(1);}
 
-/* FLOAT BUTTONS */
+/* FLOAT */
 .float{
 position:fixed;
 right:20px;
@@ -170,14 +180,18 @@ background:#d4af37;
 color:#000;
 padding:15px;
 text-decoration:none;
+border-radius:5px;
 }
 
 /* ANIMATION */
 @keyframes fadeUp{
-to{
-opacity:1;
-transform:translateY(0);
+from{opacity:0;transform:translateY(50px);}
+to{opacity:1;transform:translateY(0);}
 }
+
+@media(max-width:768px){
+.hero h1{font-size:40px;}
+form{grid-template-columns:1fr;}
 }
 
 </style>
@@ -187,7 +201,7 @@ transform:translateY(0);
 
 <!-- NAV -->
 <nav>
-<h1>TAAJ</h1>
+<img src="images/logo.png">
 <div>
 <a href="#">Home</a>
 <a href="#services">Services</a>
@@ -198,7 +212,7 @@ transform:translateY(0);
 <!-- HERO -->
 <section class="hero">
 <div>
-<h2>WELCOME TO <span>TAAJ</span><br>Cleaning Services</h2>
+<h1>WELCOME TO <span>TAAJ</span><br>Premium Cleaning Canberra</h1>
 <a href="#contact" class="btn">Get a Quote</a>
 </div>
 </section>
@@ -206,26 +220,49 @@ transform:translateY(0);
 <!-- SERVICES -->
 <section id="services" class="section">
 <h2>Our Services</h2>
-<div class="grid">
 
-<div class="card">
+<div class="services">
+
+<div class="service-card">
+<img src="images/endlease.jpg">
+<div class="service-overlay">
 <h3>End of Lease Cleaning</h3>
-<p>Detailed cleaning to secure your full bond.</p>
+</div>
 </div>
 
-<div class="card">
+<div class="service-card">
+<img src="images/deep.jpg">
+<div class="service-overlay">
 <h3>Deep Cleaning</h3>
-<p>Complete interior cleaning with precision.</p>
+</div>
 </div>
 
-<div class="card">
+<div class="service-card">
+<img src="images/general.jpg">
+<div class="service-overlay">
+<h3>General Home Cleaning</h3>
+</div>
+</div>
+
+<div class="service-card">
+<img src="images/carpet.jpg">
+<div class="service-overlay">
+<h3>Carpet Cleaning</h3>
+</div>
+</div>
+
+<div class="service-card">
+<img src="images/pressure.jpg">
+<div class="service-overlay">
 <h3>Pressure Washing</h3>
-<p>Restore outdoor surfaces professionally.</p>
+</div>
 </div>
 
-<div class="card">
+<div class="service-card">
+<img src="images/window.jpg">
+<div class="service-overlay">
 <h3>Window Cleaning</h3>
-<p>Crystal clear streak-free windows.</p>
+</div>
 </div>
 
 </div>
@@ -234,19 +271,21 @@ transform:translateY(0);
 <!-- REVIEWS -->
 <section class="section">
 <h2>What Canberra Residents Say</h2>
-<div class="grid">
+
+<div class="review-grid">
 
 <div class="review">
 <strong>Rohit Sharma</strong>
-<p>Got full bond back. Amazing attention to detail.</p>
+<p>Full bond back. Extremely detailed work.</p>
 </div>
 
 <div class="review">
 <strong>Aman Singh</strong>
-<p>Very professional and quick service.</p>
+<p>Very professional and reliable service.</p>
 </div>
 
 </div>
+
 </section>
 
 <!-- FORM -->
@@ -260,6 +299,7 @@ transform:translateY(0);
 <option>Select Service</option>
 <option>End of Lease</option>
 <option>Deep Cleaning</option>
+<option>General Cleaning</option>
 </select>
 <textarea placeholder="Your requirements"></textarea>
 <button type="submit">Request Quote</button>
@@ -274,23 +314,20 @@ transform:translateY(0);
 <button onclick="closePopup()" class="btn">Close</button>
 </div>
 
-<!-- FLOAT BUTTONS -->
+<!-- FLOAT -->
 <div class="float">
 <a href="tel:+61468852570">Call</a>
 <a href="https://wa.me/61468852570">WhatsApp</a>
 </div>
 
 <script>
-
 function showPopup(e){
 e.preventDefault();
 document.getElementById("popup").classList.add("active");
 }
-
 function closePopup(){
 document.getElementById("popup").classList.remove("active");
 }
-
 </script>
 
 </body>
