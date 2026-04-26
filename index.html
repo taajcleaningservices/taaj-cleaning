@@ -12,17 +12,20 @@ body {
   font-family: Arial, sans-serif;
   background:#000;
   color:#fff;
-  text-align:center;
 }
 
 header {
-  padding:60px 20px;
+  text-align:center;
+  padding:80px 20px;
 }
 
 h1 {
   color:#FFD700;
   font-size:42px;
-  margin-bottom:10px;
+}
+
+h2 {
+  color:#FFD700;
 }
 
 p {
@@ -41,33 +44,35 @@ p {
 }
 
 .section {
-  padding:50px 20px;
+  padding:60px 20px;
+  text-align:center;
 }
 
-h2 {
-  color:#FFD700;
-  margin-bottom:20px;
-}
-
-.cards {
+.grid {
   display:flex;
-  flex-direction:column;
-  align-items:center;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
 .card {
   background:#111;
-  padding:20px;
   margin:10px;
-  width:80%;
+  padding:20px;
+  width:260px;
+  border-radius:10px;
+}
+
+.gallery img {
+  width:90%;
   max-width:300px;
+  margin:10px;
   border-radius:10px;
 }
 
 .footer {
+  text-align:center;
   padding:30px;
-  font-size:14px;
-  color:#888;
+  color:#777;
 }
 </style>
 </head>
@@ -77,7 +82,7 @@ h2 {
 <header>
   <h1>TAAJ Cleaning Services</h1>
   <p>Premium Cleaning Services in Canberra</p>
-  <p>Reliable, detail-focused cleaning for homes and end-of-lease.</p>
+  <p>End of Lease • Deep Cleaning • Regular Cleaning</p>
 
   <a class="btn" href="tel:0468852570">Call Now</a>
   <a class="btn" href="https://wa.me/61468852570">WhatsApp</a>
@@ -86,21 +91,34 @@ h2 {
 <div class="section">
   <h2>Our Services</h2>
 
-  <div class="cards">
+  <div class="grid">
     <div class="card">End of Lease Cleaning</div>
     <div class="card">Deep Cleaning</div>
     <div class="card">Regular Cleaning</div>
-    <div class="card">Oven Cleaning (Add-on)</div>
-    <div class="card">Limescale Removal (Add-on)</div>
+    <div class="card">Oven Cleaning</div>
+    <div class="card">Limescale Removal</div>
+    <div class="card">Balcony Cleaning</div>
   </div>
 </div>
 
 <div class="section">
   <h2>Why Choose Us</h2>
-  <p>✔ Professional equipment</p>
-  <p>✔ Attention to detail</p>
-  <p>✔ Reliable & on-time</p>
-  <p>✔ Canberra based</p>
+
+  <p>✔ Professional Equipment</p>
+  <p>✔ Attention to Detail</p>
+  <p>✔ Reliable & On-Time</p>
+  <p>✔ Canberra Based</p>
+</div>
+
+<div class="section">
+  <h2>Before & After</h2>
+
+  <div class="gallery">
+    <img src="before1.jpg" alt="Before Cleaning">
+    <img src="after1.jpg" alt="After Cleaning">
+  </div>
+
+  <p>Real results from our cleaning jobs</p>
 </div>
 
 <div class="section">
