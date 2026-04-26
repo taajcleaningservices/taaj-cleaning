@@ -6,41 +6,42 @@
 <title>TAAJ Cleaning Services</title>
 
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
 <!-- NAVBAR -->
 <header>
-    <div class="logo">
-        <img src="images/logo.png" alt="logo">
-    </div>
+    <img src="images/logo.png" class="logo">
+
     <nav>
         <a href="#">Home</a>
         <a href="#services">Services</a>
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
-        <a href="https://wa.me/61468852570" class="whatsapp">WhatsApp</a>
+        <a href="https://wa.me/61468852570" class="gold">WhatsApp</a>
     </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
     <div class="overlay"></div>
-    <div class="hero-text">
-        <h1 class="reveal">WELCOME TO</h1>
-        <h2 class="reveal delay">TAAJ CLEANING SERVICES</h2>
-        <p class="reveal delay2">Where detail defines the difference.</p>
+
+    <div class="hero-content">
+        <h1 class="fade-up">WELCOME TO</h1>
+        <h2 class="fade-up delay">TAAJ CLEANING SERVICES</h2>
+        <p class="fade-up delay2">Premium cleaning. Precision in every detail.</p>
+
         <button onclick="scrollToQuote()">Get a Quote</button>
     </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="services">
+<section id="services">
     <h2 class="section-title">Our Services</h2>
 
-    <div class="service-grid">
+    <div class="grid">
 
         <div class="card">
             <img src="images/endlease.png">
@@ -76,58 +77,57 @@
 </section>
 
 <!-- REVIEWS -->
-<section id="reviews" class="reviews">
-    <h2>What Canberra Residents Say</h2>
+<section id="reviews">
+    <h2 class="section-title">What Canberra Residents Say</h2>
 
     <div class="review-grid">
 
-        <div class="review-card">
+        <div class="review">
             <img src="images/review1.jpg">
-            <div class="overlay-text">
-                <h3>Full Bond Back Achieved</h3>
-                <p>Spotless finish. Got full bond without issues.</p>
+            <div class="review-text">
+                <h3>Full Bond Back</h3>
+                <p>Spotless cleaning, got full bond easily.</p>
             </div>
         </div>
 
-        <div class="review-card">
+        <div class="review">
             <img src="images/review2.jpg">
-            <div class="overlay-text">
-                <h3>Exceptional Detail</h3>
+            <div class="review-text">
+                <h3>Attention to Detail</h3>
                 <p>Every corner cleaned perfectly.</p>
             </div>
         </div>
 
-        <div class="review-card">
+        <div class="review">
             <img src="images/review3.jpg">
-            <div class="overlay-text">
+            <div class="review-text">
                 <h3>Reliable Service</h3>
-                <p>On time, professional and consistent.</p>
+                <p>Always on time and professional.</p>
             </div>
         </div>
 
-        <div class="review-card">
+        <div class="review">
             <img src="images/review4.jpg">
-            <div class="overlay-text">
+            <div class="review-text">
                 <h3>Highly Recommended</h3>
-                <p>Best cleaning experience in Canberra.</p>
+                <p>Best cleaners in Canberra.</p>
             </div>
         </div>
 
     </div>
 </section>
 
-<!-- QUOTE FORM -->
-<section id="contact" class="contact">
-    <h2>Request a Quote</h2>
+<!-- CONTACT -->
+<section id="contact">
+    <h2 class="section-title">Request a Quote</h2>
 
-    <form id="quoteForm">
-
+    <form id="form">
         <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
+        <input type="email" placeholder="Email" required>
         <input type="text" placeholder="Phone Number" required>
 
-        <select required>
-            <option value="">Service</option>
+        <select>
+            <option>Select Service</option>
             <option>End of Lease</option>
             <option>Deep Cleaning</option>
             <option>General Cleaning</option>
@@ -136,23 +136,21 @@
             <option>Pressure Washing</option>
         </select>
 
-        <textarea placeholder="Describe your cleaning needs..."></textarea>
+        <textarea placeholder="Describe your job..."></textarea>
 
         <button type="submit">Request Quote</button>
     </form>
 
-    <div id="thankYou" class="hidden">
-        <h3>Thank you!</h3>
-        <p>You’ll be contacted shortly.</p>
+    <div id="thanks">
+        <h3>Thank You</h3>
+        <p>We’ll contact you shortly.</p>
     </div>
-
 </section>
 
 <!-- FOOTER -->
 <footer>
     <img src="images/logo.png">
-    <p>Premium Residential Cleaning Services in Canberra</p>
-    <p>Canberra, Australia</p>
+    <p>Premium Cleaning Services in Canberra</p>
     <p>+61 468852570</p>
     <p>© 2026 TAAJ Cleaning Services</p>
 </footer>
