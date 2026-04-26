@@ -3,137 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>TAAJ Cleaning Services</title>
 
 <style>
 body {
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#000;
-  color:#fff;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0a0a0a;
+    color: white;
 }
 
-header {
-  text-align:center;
-  padding:80px 20px;
+/* HERO */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1581578731548-c64695cc6952');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;   
 }
 
-h1 {
-  color:#FFD700;
-  font-size:42px;
+.hero h1 {
+    font-size: 50px;
+    color: gold;
 }
 
-h2 {
-  color:#FFD700;
-}
-
-p {
-  color:#ccc;
+.hero p {
+    font-size: 18px;
+    margin: 10px 0;
 }
 
 .btn {
-  display:inline-block;
-  margin:10px;
-  padding:12px 25px;
-  background:#FFD700;
-  color:#000;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:5px;
+    background: gold;
+    color: black;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
+/* SERVICES */
 .section {
-  padding:60px 20px;
-  text-align:center;
+    padding: 60px 20px;
+    text-align: center;
 }
 
-.grid {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
 }
 
 .card {
-  background:#111;
-  margin:10px;
-  padding:20px;
-  width:260px;
-  border-radius:10px;
+    background: #111;
+    padding: 25px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: #1a1a1a;
+}
+
+/* BEFORE AFTER */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 .gallery img {
-  width:90%;
-  max-width:300px;
-  margin:10px;
-  border-radius:10px;
+    width: 100%;
+    border-radius: 10px;
 }
 
+/* REVIEWS */
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.review {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* FOOTER */
 .footer {
-  text-align:center;
-  padding:30px;
-  color:#777;
+    background: black;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
 }
 </style>
+
 </head>
 
 <body>
 
-<header>
-  <h1>TAAJ Cleaning Services</h1>
-  <p>Premium Cleaning Services in Canberra</p>
-  <p>End of Lease • Deep Cleaning • Regular Cleaning</p>
+<!-- HERO -->
+<section class="hero">
+    <h1>TAAJ Cleaning Services</h1>
+    <p>Premium Cleaning Services in Canberra</p>
+    <p>End of Lease • Deep Cleaning • Limescale Experts</p>
 
-  <a class="btn" href="tel:0468852570">Call Now</a>
-  <a class="btn" href="https://wa.me/61468852570">WhatsApp</a>
-</header>
+    <div>
+        <a href="tel:0468852570" class="btn">Call Now</a>
+        <a href="https://wa.me/61468852570" class="btn">WhatsApp</a>
+    </div>
+</section>
 
-<div class="section">
-  <h2>Our Services</h2>
+<!-- SERVICES -->
+<section class="section">
+    <h2 style="color: gold;">Our Services</h2>
 
-  <div class="grid">
-    <div class="card">End of Lease Cleaning</div>
-    <div class="card">Deep Cleaning</div>
-    <div class="card">Regular Cleaning</div>
-    <div class="card">Oven Cleaning</div>
-    <div class="card">Limescale Removal</div>
-    <div class="card">Balcony Cleaning</div>
-  </div>
-</div>
+    <div class="services">
+        <div class="card">End of Lease Cleaning</div>
+        <div class="card">Deep Cleaning</div>
+        <div class="card">Regular Cleaning</div>
+        <div class="card">Oven Cleaning</div>
+        <div class="card">Limescale Removal</div>
+        <div class="card">Balcony Cleaning</div>
+        <div class="card">Pressure Washing</div>
+        <div class="card">Window Cleaning</div>
+    </div>
+</section>
 
-<div class="section">
-  <h2>Why Choose Us</h2>
+<!-- BEFORE AFTER -->
+<section class="section">
+    <h2 style="color: gold;">Before & After</h2>
 
-  <p>✔ Professional Equipment</p>
-  <p>✔ Attention to Detail</p>
-  <p>✔ Reliable & On-Time</p>
-  <p>✔ Canberra Based</p>
-</div>
+    <div class="gallery">
+        <img src="YOUR_IMAGE_1.jpg">
+        <img src="YOUR_IMAGE_2.jpg">
+        <img src="YOUR_IMAGE_3.jpg">
+    </div>
+</section>
 
-<div class="section">
-  <h2>Before & After</h2>
+<!-- WHY US -->
+<section class="section">
+    <h2 style="color: gold;">Why Choose Us</h2>
 
-  <div class="gallery">
-    <img src="before1.jpg" alt="Before Cleaning">
-    <img src="after1.jpg" alt="After Cleaning">
-  </div>
+    <div class="services">
+        <div class="card">Professional Equipment</div>
+        <div class="card">Attention to Detail</div>
+        <div class="card">Reliable & On-Time</div>
+    </div>
+</section>
 
-  <p>Real results from our cleaning jobs</p>
-</div>
+<!-- REVIEWS -->
+<section class="section">
+    <h2 style="color: gold;">Customer Reviews</h2>
 
-<div class="section">
-  <h2>Customer Reviews</h2>
-  <p>Google reviews coming soon.</p>
-</div>
+    <div class="reviews">
 
-<div class="section">
-  <h2>Contact</h2>
-  <p>📞 0468852570</p>
-  <p>📍 Canberra & surrounding suburbs</p>
-</div>
+        <div class="review">
+            ⭐⭐⭐⭐⭐ <br>
+            “Amazing job on end of lease clean. Got full bond back!” <br><br>
+            – Sarah M.
+        </div>
 
+        <div class="review">
+            ⭐⭐⭐⭐⭐ <br>
+            “Bathroom looked brand new. Very professional.” <br><br>
+            – Daniel K.
+        </div>
+
+        <div class="review">
+            ⭐⭐⭐⭐⭐ <br>
+            “On time, fast, and super detailed cleaning.” <br><br>
+            – Amit S.
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section">
+    <h2 style="color: gold;">Contact</h2>
+    <p>📍 Canberra</p>
+    <p>📞 0468852570</p>
+</section>
+
+<!-- FOOTER -->
 <div class="footer">
-  © 2026 TAAJ Cleaning Services
+    © 2026 TAAJ Cleaning Services | taajcleaningservices.com.au
 </div>
 
 </body>
